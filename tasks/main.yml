@@ -1,0 +1,26 @@
+---
+# tasks file for hashicorp_vault
+
+- name: Install the prerequisite packages
+  ansible.builtin.apt:
+    name: "{{ vault_prerquisites }}"
+    state: present
+
+- name: Download and add the APT key
+  ansible.builtin.apt_key:
+    url: " {{ vault_gpg_url }}"
+
+- name: Add the Hashicorp repository to the system
+  ansible.builtin.apt_repository:
+    repo: "{{ vault_apt_repo }}"
+    filename: hashicorp-vault
+    state: present
+  notify: Update the package repo db cache
+
+- name: Flush handlers
+  ansible.builtin.meta: flush_handlers
+
+- name: Install the vault packages
+  ansible.builtin.apt:
+    name: "{{ vault_install_packages }}"
+    state: present

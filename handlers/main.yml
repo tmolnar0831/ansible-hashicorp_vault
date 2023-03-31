@@ -1,0 +1,6 @@
+---
+# handlers file for hashicorp_vault
+
+- name: Update the package repo db cache
+  ansible.builtin.apt:
+    update_cache: yes
