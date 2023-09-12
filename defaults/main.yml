@@ -4,10 +4,7 @@
 vault_prerquisites:
   - ca-certificates
   - gnupg
-
 vault_gpg_url: https://apt.releases.hashicorp.com/gpg
-
-vault_apt_repo: deb https://apt.releases.hashicorp.com bullseye main
-
+vault_apt_repo: deb https://apt.releases.hashicorp.com bookworm main
 vault_install_packages:
   - vault

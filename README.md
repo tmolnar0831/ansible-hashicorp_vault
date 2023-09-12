@@ -1,23 +1,19 @@
 hashicorp_vault
 =========
 
-A simple Ansible role that installs Hashicorp Vault on Debian Linux
+This is an Ansible role that installs Hashicorp Vault on Debian Linux
 
 Requirements
 ------------
 
-This role tries to be as simple as it is possible. The only requirement is an installed Ansible 2.9+ to use it.
+- Ansible >= 2.10
 
 Role Variables
 --------------
 
-Every variable here has default values handled in the "defaults". The role is written for Debian Bullseye.
-
 ```
 vault_gpg_url: https://apt.releases.hashicorp.com/gpg
-
-vault_apt_repo: deb https://apt.releases.hashicorp.com $(lsb_release -cs) main
-
+vault_apt_repo: deb https://apt.releases.hashicorp.com bookworm main
 vault_install_packages:
   - vault
 ```
@@ -25,12 +21,10 @@ vault_install_packages:
 Dependencies
 ------------
 
-This role tries to be as simple as it is possible. The only requirement is an installed Ansible to use it.
+- Ansible >= 2.10
 
 Example Playbook
 ----------------
-
-Just include it in the roles and all set.
 
     - hosts: all
       roles:

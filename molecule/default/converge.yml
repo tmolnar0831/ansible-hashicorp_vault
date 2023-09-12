@@ -1,0 +1,16 @@
+---
+- name: Converge
+  hosts: molecule
+  gather_facts: false
+
+  vars:
+    vault_gpg_url: https://apt.releases.hashicorp.com/gpg
+    vault_apt_repo: deb https://apt.releases.hashicorp.com bookworm main
+    vault_install_packages:
+      - vault
+
+  tasks:
+    - name: Test the role with the defaults
+      ansible.builtin.include_role:
+        name: hashicorp_vault
+        tasks_from: main.yml
