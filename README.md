@@ -1,7 +1,9 @@
 hashicorp_vault
 =========
 
-This is an Ansible role that installs Hashicorp Vault on Debian Linux
+This is an Ansible role that installs Hashicorp Vault on Debian Linux using APT.
+
+HashiCorp Vault is an open-source tool designed for managing secrets and protecting sensitive data within modern infrastructure and applications. It provides a secure and centralized way to store, access, and distribute secrets such as API keys, passwords, certificates, and other sensitive information. HashiCorp Vault helps organizations achieve data security and compliance by offering features like encryption, access control, auditing, and dynamic secret generation.
 
 Requirements
 ------------
